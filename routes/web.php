@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('form');
 });
+
+Route::post('/generate-payslip','PaySlipController@getPaySlip');

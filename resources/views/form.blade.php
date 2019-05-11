@@ -20,19 +20,29 @@
 <body>
     <h1 class="title has-text-centered	">Payslip Generator</h1>
     <div class="form container">
-        <form action="">
+        <form action="/generate-payslip" method="POST">
+            {{ csrf_field() }}
             <!-- Name -->
             <div class="field">
                 <label class="label">Name</label>
                 <div class="control">
-                    <input class="input" type="text" name="employee-name" placeholder="Name of Employee">
+                    <input class="input" type="text" name="employee_name" placeholder="Name of Employee">
                 </div>
             </div>
             <!-- Date Joined -->
             <div class="field is-4">
                 <label class="label">Date Joined</label>
                 <div class="control">
-                    <input class="input" type="date" name="date-employee-joined">
+                    <input class="input" type="date" name="date_employee_joined">
+                </div>
+            </div>
+            {{-- Base Salary --}}
+            <div class="field has-addons">
+                <p class="control">
+                    <a class="button is-static">Rs.</a>
+                </p>
+                <div class="control  is-expanded">
+                    <input class="input" type="text" name="salary" placeholder="Base Salary">
                 </div>
             </div>
             <h2 class="subtitle">Allowances</h2>
@@ -44,7 +54,7 @@
                             <a class="button is-static">Rs.</a>
                         </p>
                         <div class="control  is-expanded">
-                            <input class="input" type="text" name="house-rent-allowance"
+                            <input class="input" type="text" name="house_rent_allowance"
                                 placeholder="House Rent Allowances">
                         </div>
                     </div>
@@ -57,7 +67,7 @@
                             <a class="button is-static">Rs.</a>
                         </p>
                         <div class="control is-expanded">
-                            <input class="input" type="text" name="meal-allowance" placeholder="Meal Allowances">
+                            <input class="input" type="text" name="meal_allowance" placeholder="Meal Allowances">
                         </div>
                     </div>
                 </div>
@@ -70,7 +80,7 @@
                             <a class="button is-static">Rs.</a>
                         </p>
                         <div class="control is-expanded">
-                            <input class="input" type="text" name="transportation-allowance"
+                            <input class="input" type="text" name="transportation_allowance"
                                 placeholder="Transportation Allowances ">
                         </div>
                     </div>
@@ -84,7 +94,7 @@
                             <a class="button is-static">Rs.</a>
                         </p>
                         <div class="control is-expanded">
-                            <input class="input" type="text" name="travel-allowance"
+                            <input class="input" type="text" name="travel_allowance"
                                 placeholder="Extra Travel Allowance">
                         </div>
                     </div>
@@ -96,7 +106,7 @@
                     <a class="button is-static">Rs.</a>
                 </p>
                 <div class="control is-expanded">
-                    <input class="input" type="text" name="other-allowance" placeholder="Other Allowances">
+                    <input class="input" type="text" name="other_allowance" placeholder="Other Allowances">
                 </div>
             </div>
 
@@ -108,7 +118,7 @@
                     <div class="field has-addons">
                         <div class="control  is-expanded">
 
-                            <input class="input" type="text" name="provident-fund-percent"
+                            <input class="input" type="text" name="provident_fund_percent"
                                 placeholder="Provident Fund ">
                         </div>
                         <div class="control">
@@ -122,7 +132,7 @@
                     <div class="field has-addons">
                         <div class="control  is-expanded">
 
-                            <input class="input" type="text" name="gratuity-percent" placeholder="Gratuity ">
+                            <input class="input" type="text" name="gratuity_percent" placeholder="Gratuity ">
                         </div>
                         <div class="control">
                             <a class="button is-static">%</a>
@@ -134,7 +144,7 @@
             <div class="field has-addons">
                 <div class="control  is-expanded">
 
-                    <input class="input" type="text" name="ssf-percent" placeholder="SSF Contribution ">
+                    <input class="input" type="text" name="ssf_percent" placeholder="SSF Contribution ">
                 </div>
                 <div class="control">
                     <a class="button is-static">%</a>
@@ -151,7 +161,7 @@
                     <div class="field has-addons">
                         <div class="control  is-expanded">
 
-                            <input class="input" type="text" name="deduce-provident-fund-percent"
+                            <input class="input" type="text" name="deduce_provident_fund_percent"
                                 placeholder="Provident Fund ">
                         </div>
                         <div class="control">
@@ -165,7 +175,7 @@
                     <div class="field has-addons">
                         <div class="control  is-expanded">
 
-                            <input class="input" type="text" name="deduce-gratuity-percent" placeholder="Gratuity ">
+                            <input class="input" type="text" name="deduce_gratuity_percent" placeholder="Gratuity ">
                         </div>
                         <div class="control">
                             <a class="button is-static">%</a>
@@ -177,7 +187,7 @@
             <div class="field has-addons">
                 <div class="control  is-expanded">
 
-                    <input class="input" type="text" name="deduce-ssf-percent" placeholder="SSF Contribution ">
+                    <input class="input" type="text" name="deduce_ssf_percent" placeholder="SSF Contribution ">
                 </div>
                 <div class="control">
                     <a class="button is-static">%</a>
@@ -187,8 +197,8 @@
             <!-- Social Security Tax  -->
             <h3 class="subtitle is-4"> Social Security Tax</h3>
             <div class="field has-addons ">
-                <div class="control ">
-                    <input class="input" type="text" name="social-tax-percent" placeholder="Social Security Tax">
+                <div class="control is-expanded">
+                    <input class="input" type="text" name="social_tax_percent" placeholder="Social Security Tax">
                 </div>
                 <div class="control">
                     <a class="button is-static">%</a>
@@ -210,7 +220,7 @@
                     <div class="field">
                         <label class="label">Name of Creator</label>
                         <div class="control">
-                            <input class="input" type="text" name="name-of-creator" placeholder="Name of Employee">
+                            <input class="input" type="text" name="name_of_creator" placeholder="Name of Employee">
                         </div>
                     </div>
                 </div>
@@ -218,7 +228,7 @@
                     <div class="field">
                         <label class="label">Title</label>
                         <div class="control">
-                            <input class="input" type="text" name="title"  placeholder="Title">
+                            <input class="input" type="text" name="title" placeholder="Title">
                         </div>
                     </div>
                 </div>
@@ -227,12 +237,12 @@
             <div class="field">
                 <label class="label">Date created</label>
                 <div class="control">
-                    <input class="input" type="date" name="date-payslip-generated" placeholder="Date Created">
+                    <input class="input" type="date" name="date_payslip_generated" placeholder="Date Created">
                 </div>
             </div>
 
             <!-- Generate Button -->
-            <a class="button is-primary" type="submit">Generate Payslip</a>
+            <input class="button is-primary" type="submit" value="Generate Payslip"></input>
 
         </form>
     </div>
