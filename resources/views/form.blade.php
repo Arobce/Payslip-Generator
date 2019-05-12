@@ -242,7 +242,7 @@
             </div>
 
             <!-- Generate Button -->
-            <input class="button is-primary" type="submit" value="Generate Payslip"></input>
+            <input class="button is-primary" type="submit" value="Download Payslip">
 
         </form>
     </div>

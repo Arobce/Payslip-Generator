@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Payslip</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
-        integrity="sha256-8B1OaG0zT7uYA572S2xOxWACq9NXYPQ+U5kHPV1bJN4=" crossorigin="anonymous" />
     <style>
+        *{
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
         table {
             width: 100%;
         }
@@ -18,7 +21,41 @@
         }
 
         div {
-            margin-bottom: 30px;
+            margin-bottom: 18px;
+        }
+
+        .download-pdf{
+            margin: 10px;
+        }
+
+        .container{
+            margin: 0 30px;
+        }
+
+        .has-text-left{
+            text-align: left;
+        }
+
+        .has-text-right{
+            text-align: right;
+        }
+
+        .has-text-centered{
+            text-align: center;
+        }
+
+        .title{
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .subtitle{
+            font-size: 18px;
+        }
+
+        .is-centered{
+            margin: 0 auto;
+
         }
     </style>
 </head>
@@ -43,9 +80,9 @@
 
 <body>
     <div class="container">
-        <div class="title has-text-centered	">
+        <div class="title has-text-centered	is-centered">
             <h1 class="title is-4">Aswin Service Pvt. Ltd.</h1>
-            <h3 class="subtitle is-6"><b>SALARY PAY SLIP</b></h3>
+            <h3 class="subtitle is-bold">SALARY PAY SLIP</h3>
         </div>
         <div class="employee-info">
             <table>
