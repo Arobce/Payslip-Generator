@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Payslip</title>
     <style>
-        *{
+        * {
             font-size: 16px;
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -24,59 +24,42 @@
             margin-bottom: 18px;
         }
 
-        .download-pdf{
+        .download-pdf {
             margin: 10px;
         }
 
-        .container{
+        .container {
             margin: 0 30px;
         }
 
-        .has-text-left{
+        .has-text-left {
             text-align: left;
         }
 
-        .has-text-right{
+        .has-text-right {
             text-align: right;
         }
 
-        .has-text-centered{
+        .has-text-centered {
             text-align: center;
         }
 
-        .title{
+        .title {
             font-weight: bold;
             font-size: 30px;
         }
 
-        .subtitle{
+        .subtitle {
             font-size: 18px;
         }
 
-        .is-centered{
+        .is-centered {
             margin: 0 auto;
 
         }
     </style>
 </head>
-<!-- 
-    date_employee_joined
-    meal_allowance
-    transportation_allowance
-    travel_allowance
-    meal_allowance
-    other_allowance
-    provident_fund_percent
-    gratuity_percent
-    ssf_percent
-    deduce_provident_fund_percent
-    deduce_ssf_percent
-    social_tax_percent
-    remarks
-    name_of_creator
-    title
-    date_payslip_generated
- -->
+
 
 <body>
     <div class="container">
