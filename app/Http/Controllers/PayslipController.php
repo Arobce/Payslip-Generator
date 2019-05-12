@@ -9,6 +9,8 @@ class PayslipController extends Controller
 {
     //Generate Payslip
     public function getPaySlip(Request $request){
-        return view('payslip')->with('paySlipData',$request);
+        $formatDataObj = new FormatFormData();
+        $formatDataObj->setData($request);
+        return view('payslip')->with('paySlipData',$formatDataObj->getData());
     }
 }

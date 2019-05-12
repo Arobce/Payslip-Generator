@@ -63,29 +63,27 @@
             <table>
                 <tr>
                     <td class=" has-text-left">Basic Salary</td>
-                    <td class="has-text-right is-uppercase">{{$paySlipData->salary}}</td>
+                    <td class="has-text-right is-uppercase">{{number_format($paySlipData->salary)}}</td>
                 </tr>
                 <tr>
                     <td class=" has-text-left">House Rent Allowance</td>
-                    <td class="has-text-right">{{$paySlipData->house_rent_allowance}}</td>
+                    <td class="has-text-right">{{number_format($paySlipData->house_rent_allowance)}}</td>
                 </tr>
                 <tr>
                     <td class=" has-text-left">Meal Allowance</td>
-                    <td class="has-text-right is-uppercase">{{$paySlipData->meal_allowance}}</td>
+                    <td class="has-text-right is-uppercase">{{number_format($paySlipData->meal_allowance)}}</td>
                 </tr>
                 <tr>
                     <td class=" has-text-left">Transportation Allowance</td>
-                    <td class="has-text-right">{{$paySlipData->transportation_allowance}}</td>
+                    <td class="has-text-right">{{number_format($paySlipData->transportation_allowance)}}</td>
                 </tr>
                 <tr>
                     <td class=" has-text-left">Other Allowance</td>
-                    <td class="has-text-right is-uppercase">{{$paySlipData->other_allowance}}</td>
+                    <td class="has-text-right is-uppercase">{{number_format($paySlipData->other_allowance)}}</td>
                 </tr>
                 <tr>
                     <td class=" has-text-left is-bold">Sub - Total</td>
-                    <td class="has-text-right">{{$paySlipData->house_rent_allowance + $paySlipData->salary + 
-                        $paySlipData->meal_allowance + $paySlipData->transportation_allowance + 
-                        $paySlipData->other_allowance }}</td>
+                    <td class="has-text-right">{{number_format($paySlipData->salary_after_allowance )}}</td>
                 </tr>
 
             </table>
@@ -100,21 +98,21 @@
                 <tr>
                     <td class=" has-text-left">Provident Fund ({{ $paySlipData->provident_fund_percent }}% of Basic
                         Salary)</td>
-                    <td class="has-text-right">{{$paySlipData->salary * ($paySlipData->provident_fund_percent / 100)}}
+                    <td class="has-text-right">{{number_format($paySlipData->provident_fund_amount )}}
                     </td>
                 </tr>
                 <tr>
                     <td class=" has-text-left">Gratuity ({{ $paySlipData->gratuity_percent }}% of Basic Salary)</td>
                     <td class="has-text-right is-uppercase">
-                        {{$paySlipData->salary * ($paySlipData->gratuity_percent / 100)}}</td>
+                        {{number_format($paySlipData->gratuity_amount)}}</td>
                 </tr>
                 <tr>
                     <td class=" has-text-left">SSF Contribution ({{ $paySlipData->ssf_percent  }}% of Basic Salary)</td>
-                    <td class="has-text-right">{{$paySlipData->salary * ($paySlipData->ssf_percent / 100)}}</td>
+                    <td class="has-text-right">{{number_format($paySlipData->ssf_amount)}}</td>
                 </tr>
                 <tr>
                     <td class=" has-text-left is-bold">Sub - Total</td>
-                    <td class="has-text-right is-uppercase">{{$paySlipData->other_allowance}}</td>
+                    <td class="has-text-right is-uppercase">{{number_format($paySlipData->ssf_amount_to_add)}}</td>
                 </tr>
             </table>
         </div>
@@ -123,7 +121,7 @@
             <table>
                 <tr>
                     <td class="has-text-left is-bold">Salary Payable</td>
-                    <td class="has-text-right">400000</td>
+                    <td class="has-text-right">{{number_format($paySlipData->amount_after_added_ssf)}}</td>
                 </tr>
             </table>
         </div>
@@ -132,11 +130,11 @@
             <table>
                 <tr>
                     <td class="has-text-left ">Extra Travel Allowance</td>
-                    <td class="has-text-right">{{$paySlipData->travel_allowance}}</td>
+                    <td class="has-text-right">{{number_format($paySlipData->travel_allowance)}}</td>
                 </tr>
                 <tr>
                     <td class="has-text-left is-bold">Total Salary Payable</td>
-                    <td class="has-text-right">400000</td>
+                    <td class="has-text-right">{{number_format($paySlipData->salary_after_travel_allowance)}}</td>
                 </tr>
 
             </table>
@@ -150,23 +148,23 @@
                 <tr>
                     <td class=" has-text-left">Provident Fund ({{ $paySlipData->deduce_provident_fund_percent }}% of
                         Basic Salary)</td>
-                    <td class="has-text-right">{{$paySlipData->salary * ($paySlipData->provident_fund_percent / 100)}}
+                    <td class="has-text-right">{{number_format($paySlipData->deduce_provident_fund_amount )}}
                     </td>
                 </tr>
                 <tr>
                     <td class=" has-text-left">Gratuity ({{ $paySlipData->deduce_gratuity_percent }}% of Basic Salary)
                     </td>
                     <td class="has-text-right is-uppercase">
-                        {{$paySlipData->salary * ($paySlipData->gratuity_percent / 100)}}</td>
+                        {{number_format($paySlipData->deduce_gratuity_amount)}}</td>
                 </tr>
                 <tr>
                     <td class=" has-text-left">SSF Contribution ({{ $paySlipData->deduce_ssf_percent  }}% of Basic
                         Salary)</td>
-                    <td class="has-text-right">{{$paySlipData->salary * ($paySlipData->ssf_percent / 100)}}</td>
+                    <td class="has-text-right">{{number_format($paySlipData->deduce_ssf_amount)}}</td>
                 </tr>
                 <tr>
                     <td class=" has-text-left is-bold">Sub - Total</td>
-                    <td class="has-text-right is-uppercase">{{$paySlipData->other_allowance}}</td>
+                    <td class="has-text-right is-uppercase">{{number_format($paySlipData->other_allowance)}}</td>
                 </tr>
             </table>
         </div>
@@ -175,7 +173,7 @@
             <table>
                 <tr>
                     <td class="has-text-left  is-bold">Taxable salary</td>
-                    <td class="has-text-right">{{$paySlipData->travel_allowance}}</td>
+                    <td class="has-text-right">{{number_format($paySlipData->travel_allowance)}}</td>
                 </tr>
                 <tr>
                     <td class="has-text-left ">Less: Social Security Tax</td>
@@ -183,7 +181,7 @@
                 </tr>
                 <tr>
                     <td class="has-text-left is-bold">Net Salary Payable</td>
-                    <td class="has-text-right">400000</td>
+                    <td class="has-text-right">{{number_format($paySlipData->net_salary)}}</td>
                 </tr>
 
             </table>
