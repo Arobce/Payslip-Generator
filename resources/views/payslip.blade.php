@@ -64,7 +64,7 @@
 <body>
     <div class="container">
         <div class="title has-text-centered	is-centered">
-            <h1 class="title is-4">Aswin Service Pvt. Ltd.</h1>
+            <h1 class="title is-4">XYZ Service Pvt. Ltd.</h1>
             <h3 class="subtitle is-bold">SALARY PAY SLIP</h3>
         </div>
         <div class="employee-info">

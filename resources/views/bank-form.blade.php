@@ -20,7 +20,7 @@
 <body>
     <h1 class="title has-text-centered	">Bank Letter Generator</h1>
     <div class="form container">
-        <form action="/generate-payslip" method="POST">
+        <form action="/generate-bank-letter" method="POST">
             {{ csrf_field() }}
             <h2 class="subtitle">Sender Info</h2>
             <!-- Sender Location -->
@@ -69,8 +69,16 @@
                     </select>
                 </div>
             </div>
-            <h2 class="subtitle">CEO and MD Info</h2>
+            <!-- Cheque Info -->
+            <h2 class="subtitle">Cheque Info</h2>
+            <div class="field">
+                    <div class="control">
+                        <input class="input" type="text" name="cheque_no" placeholder="Enter ChequeNo.">
+                    </div>
+                </div>
+            
             <!-- CEO Name -->
+            <h2 class="subtitle">CEO and MD</h2>
             <div class="field">
                 <div class="control">
                     <input class="input" type="text" name="ceo_name" placeholder="Enter Name of CEO">
@@ -153,7 +161,7 @@
                     <div class="column">
                         <div class="field">
                             <div class="control">
-                                <input class="input" type="text" name="staff_amount"1 placeholder="Enter Amount">
+                                <input class="input" type="text" name="staff_amount1" placeholder="Enter Amount">
                             </div>
                         </div>
                     </div>

@@ -21,4 +21,4 @@ Route::get('/bank-letter',function(){
     return view('bank-form');
 });
 
-Route::post('/generate-bank-letter','BankLetterController@getBankLetter')->name('generate-bank-letter');
+Route::post('/generate-bank-letter','BankLetterController@generateBankLetter')->name('generate-bank-letter');
