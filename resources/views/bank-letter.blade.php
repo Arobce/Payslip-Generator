@@ -160,7 +160,7 @@
             In Word: <span class="is-bold">Sixty Nine Thousand</span> only.
         </div>
         <div class="cheque-info">
-            Please debit our  CBC counstraction & traders Pvt.Ltd SCBL  cheque NO:.	<span class="is-bold">{{$bankLetterData->cheque_no}}</span>	
+            Please debit our  XYZ counstraction & traders Pvt.Ltd SCBL  cheque NO:.	<span class="is-bold">{{$bankLetterData->cheque_no}}</span>	
         </div>
         <div class="thankyou-message">
             Thank you for your Advance co-operation.
