@@ -15,4 +15,10 @@ Route::get('/', function () {
     return view('form');
 });
 
-Route::post('/generate-payslip','PaySlipController@getPaySlip')->name('generate-pdf');
+Route::post('/generate-payslip','PaySlipController@getPaySlip')->name('generate-payslip');
+
+Route::get('/bank-letter',function(){
+    return view('bank-form');
+});
+
+Route::post('/generate-bank-letter','BankLetterController@getBankLetter')->name('generate-bank-letter');

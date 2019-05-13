@@ -232,7 +232,7 @@
                             <input class="input" type="text" name="title" placeholder="Title">
                         </div>
                     </div>
-                </div>
+                </div>  
 
             </div>
             <div class="field">
