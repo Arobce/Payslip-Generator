@@ -18,6 +18,7 @@ The application makes no use of database so its fairly easy to install.
 
 ```
 clone repo
+composer install
 php artisan serve
 ```
 
